@@ -12,8 +12,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>This is Instagram 2.0 Build</h1>
-
       <Header />
 
       <Feed />
