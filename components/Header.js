@@ -13,7 +13,7 @@ import { useSession, signIn, signOut } from 'next-auth/react';
 function Header() {
   // rename data to session
   const { data: session } = useSession();
-  console.log(session);
+  // console.log(session);
 
   return (
     <div className="shadow-sm border-b bg-white sticky top-0 z-50">
@@ -69,7 +69,7 @@ function Header() {
                 onClick={signOut}
                 src={session?.user?.image}
                 alt="User"
-                className="h-10 rounded-full cursor-pointer"
+                className="h-10 w-10 rounded-full cursor-pointer"
               />
             </>
           ) : (
