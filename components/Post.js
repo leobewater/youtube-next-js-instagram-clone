@@ -12,6 +12,8 @@ import {
 } from '@heroicons/react/24/outline';
 import { HeartIcon as HeartIconFilled } from '@heroicons/react/24/solid';
 import { useEffect, useState } from 'react';
+import Moment from 'react-moment';
+
 
 function Post({ id, username, userImg, img, caption }) {
     const { data: session } = useSession();
@@ -84,7 +86,12 @@ function Post({ id, username, userImg, img, caption }) {
                                 src={comment.data().userImage}
                                 alt={comment.data().comment}
                             />
-                            <p className='text-sm flex-1'><span className='font-bold mr-2'>{comment.data().username}</span>{comment.data().comment}</p>
+                            <p className='text-sm flex-1'>
+                                <span className='font-bold mr-2'>{comment.data().username}</span>{comment.data().comment}
+                            </p>
+                            <Moment fromNow>
+                                {comment.data().timestamp}
+                            </Moment>
                         </div>
                     ))}
                 </div>
